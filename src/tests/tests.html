@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <p> open devtools to take a look at the console</p>
+    <script src ="../const.js"></script>
+    <script src ="../translateThue.js"></script>
+    <script src="../../data/reflection.js"></script>
+    <script>
+      console.log(`translating reflection program`);
+      const Reflection = translateThue(reflection);
+      console.log(JSON.stringify(Reflection));
+      console.log(Reflection.join('\n'));
+    </script>
+  </body>
+</html> 

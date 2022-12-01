@@ -66,7 +66,7 @@ Contrary to what is used in [CosmicOs](https://cosmicos.github.io/) and by [Mich
   
   modified Thue: 
   @egg@@chicken@@@
-  >egg>
+  ;egg;
   
   binary coded: 
   011 010000 011 011 010001 011 011 011 011 011111111 010000 011111111
