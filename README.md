@@ -66,7 +66,7 @@ Contrary to what is used in [CosmicOs](https://cosmicos.github.io/) and by [Mich
   
   modified Thue: 
   @egg@@chicken@@@
-  ;egg;
+  +egg+
   
   binary coded: 
   011 010000 011 011 010001 011 011 011 011 011111111 010000 011111111
@@ -75,7 +75,7 @@ Contrary to what is used in [CosmicOs](https://cosmicos.github.io/) and by [Mich
   is to provide such a one step debuggin test run. Let's use : for brevity and remember that binary coded it is 01111.
   
   introducing debuging step:
-  :chicken:
+  ~chicken~
   
   introducing debuging step (binary coded):
   01111 010001 01111      
