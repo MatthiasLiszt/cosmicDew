@@ -20,3 +20,23 @@ function translateThue(thue) {
   }
   return output;
 }
+
+function translateThue2binary(pseudo) {
+  const output = [];
+  for (const one of pseudo.split('')) {
+    if (metaSymbols.includes(one)) {
+      if (one == rule$$) output.push(rule$);
+      if (one == input$$) output.push(input$);
+      if (one == debug$$) output.push(debug$);
+      if (one == bfmarker$$) output.push(bfmarker);
+    }
+    if (validSymbols.includes(one)) {
+      const index = validSymbols.indexOf(one);
+      const toBeCoded = (maxValidSymbols * 2 - index).toString(2);
+      output.push(toBeCoded.replaceAll('0', zero$).replaceAll('1',one$));
+    } else {
+      if(!metaSymbols.includes(one)) return `invalid symbol ${one}`;
+    }
+  }
+  return output;
+}

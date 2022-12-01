@@ -16,5 +16,7 @@ const debug$$ = '?';
 const bfmarker = '01111111111111111';
 const bfmarker$$ = 'ß';
 
+const metaSymbols = '@+?ß';
 const validSymbols = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.<>!';
+const maxValidSymbols = 128;
 const thueSeparator = '::=';

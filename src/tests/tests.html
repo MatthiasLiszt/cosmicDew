@@ -8,7 +8,9 @@
       console.log(`translating reflection program`);
       const Reflection = translateThue(reflection);
       console.log(JSON.stringify(Reflection));
-      console.log(Reflection.join('\n'));
+      const pseudo = Reflection.join('');
+      const bits = translateThue2binary(pseudo);
+      console.log(JSON.stringify(bits));
     </script>
   </body>
-</html> 
+</html> )
