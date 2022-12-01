@@ -61,12 +61,12 @@ Contrary to what is used in [CosmicOs](https://cosmicos.github.io/) and by [Mich
   Here we use the input symbol > which is coded as 011111111 and marks the beginning and end of introduced input.
   
   Thue:
-  egg::=chicken
-  egg
+    egg::=chicken
+    egg
   
   modified Thue: 
-  @egg@@chicken@@@
-  +egg+
+    @egg@@chicken@@@
+    +egg+
   
   binary coded: 
   011 010000 011 011 010001 011 011 011 011 011111111 010000 011111111
@@ -97,23 +97,17 @@ an instruction ! which is just swapping a bit from 0 to 1 or 1 to 0 which is jus
 Just in case it gets lost and we have to search for it again.  [Samuel Hughes](http://samuelhughes.com/boof/) provided on his page a table on how to translate
 brainfuck to boolfuck just by replacement of instructions. I hope he does not mind if I cite him here.
 
-**+** **instruction**
-  >[>]!<[!<]>>>>>>>>>[!]<<<<<<<<<
+**+** **instruction** : >[>]!<[!<]>>>>>>>>>[!]<<<<<<<<<
 
-**-** **instruction**
-  >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>[!]<<<<<<<<<
+**-** **instruction** : >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>[!]<<<<<<<<<
 
-**<** **instruction**
-  <<<<<<<<<
+**<** **instruction** : <<<<<<<<<
 
-**>** **instruction**
-  >>>>>>>>>
+**>** **instruction** : >>>>>>>>>
 
-**[** **instruction**
-  >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>[!<<<<<<<<[>]!<[!<]
+**[** **instruction** : >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>[!<<<<<<<<[>]!<[!<]
 
-**]** **instruction**
-  >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>]<[!<]
+**]** **instruction** : >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>]<[!<]
 
 # Basic Message Content
 
