@@ -75,7 +75,7 @@ Contrary to what is used in [CosmicOs](https://cosmicos.github.io/) and by [Mich
   is to provide such a one step debuggin test run. Let's use : for brevity and remember that binary coded it is 01111.
   
   introducing debuging step:
-  ~chicken~
+  ?chicken?
   
   introducing debuging step (binary coded):
   01111 010001 01111      
@@ -98,29 +98,22 @@ Just in case it gets lost and we have to search for it again.  [Samuel Hughes](h
 brainfuck to boolfuck just by replacement of instructions. I hope he does not mind if I cite him here.
 
 **+** **instruction**
-`
- >[>]!<[!<]>>>>>>>>>[!]<<<<<<<<<
-`
+  >[>]!<[!<]>>>>>>>>>[!]<<<<<<<<<
+
 **-** **instruction**
-`
- >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>[!]<<<<<<<<<
-`
+  >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>[!]<<<<<<<<<
+
 **<** **instruction**
-`
- <<<<<<<<<
-`
+  <<<<<<<<<
+
 **>** **instruction**
-`
- >>>>>>>>>
-`
+  >>>>>>>>>
+
 **[** **instruction**
-`
- >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>[!<<<<<<<<[>]!<[!<]
-`
+  >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>[!<<<<<<<<[>]!<[!<]
+
 **]** **instruction**
-`
- >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>]<[!<]
-`
+  >>>>>>>>>!<<<<<<<<![>!]<[<]>>>>>>>>>]<[!<]
 
 # Basic Message Content
 

@@ -12,7 +12,7 @@ const rule$$end = rule$$ + rule$$ + rule$$;
 const input$ = '011111111';
 const input$$ = '+';
 const debug$ = '01111';
-const debug$$ = '~';
+const debug$$ = '?';
 const bfmarker = '01111111111111111';
 const bfmarker$$ = 'ß';
 
