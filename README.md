@@ -58,13 +58,15 @@ Contrary to what is used in [CosmicOs](https://cosmicos.github.io/) and by [Mich
   
   Usually after the rules in a Thue program comes the input which originally is introduced in a new line without any symbol.
   
-  Here we use the input symbol > which is coded as 011111111 and marks the beginning and end of introduced input.
+  Here we use the input symbol + which is coded as 011111111 and marks the beginning and end of introduced input.
   
   Thue:
+
     egg::=chicken
     egg
   
-  modified Thue: 
+  modified Thue:
+   
     @egg@@chicken@@@
     +egg+
   
@@ -72,7 +74,7 @@ Contrary to what is used in [CosmicOs](https://cosmicos.github.io/) and by [Mich
   011 010000 011 011 010001 011 011 011 011 011111111 010000 011111111
   
   Thue has no symbol for a one test step run but the very idea of making this whole thing understandable for aliens
-  is to provide such a one step debuggin test run. Let's use : for brevity and remember that binary coded it is 01111.
+  is to provide such a one step debuggin test run. Let's use ? for brevity and remember that binary coded it is 01111.
   
   introducing debuging step:
   ?chicken?
