@@ -1,0 +1,43 @@
+<html>
+  <style>
+    #ThueInput {
+      width: 60em;
+      height: 25em;
+    }
+    #Message {
+      width: 51em;
+    }
+    body {
+      padding-left: 3em;
+      padding-top: 2em;
+    }
+  </style>
+  <body>
+    <h3>Welcome !</h3>
+    <p>This page is for compiling the <bold>message</bold>. Unless you have not read the README.md I strongly recommend
+      you doing so. The first part of the message is composed of "translated" modified Thue files and debugging samples. At this
+      page you can with the help of JavaScript (hopefully turned on in your browser) copy and paste .thue and .debug files
+      and translate them to the binary code used for the message (see more in the README.md).
+    </p>
+    <h3>copy and paste Thue code here </h3>
+    <p>... btw there is a limit number of allowed characters or symbols defined in const.js</p>
+    <textarea id="ThueInput"></textarea>
+    <p>
+      <button id="CompileThue">compile</button>
+    </p>
+    <div id="Message">
+      ... once you compile something here you should see parts of the message
+    </div>
+    <p>
+      <button id="ResetMessage">reset</button>
+      <button id="Convert2Hex">convert to hex</button>
+      <button id="HumanReadable">human readable 😜️</button>
+      <button id="Download">download</button>
+    </p>
+    <script src ="src/const.js"></script>
+    <script src ="src/translateThue.js"></script>
+    <script src ="src/translateDebug.js"></script>
+    <script src ="src/conversions.js"></script>
+    <script src ="index.js"></script>
+  </body>
+</html>

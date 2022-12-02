@@ -117,7 +117,7 @@ The Basic Message Content consists of programs in modified Thue and their test r
 is the simulation of our solar system as it is the input for the Thue to Boolfuck/Brainfuck interpreter.
 
   - Reflected/Bouncing Ball Program
-  - Binary Addition / Counter
+  - Binary Increment / Counter for teaching binary counting and addition
   - Wolfram's rule 110 (as it is simple to implement in Thue) ²
   - Thue to Boolfuck/Brainfuck Interpreter
   - - Simulation of our solar system in modified brainfuck which shows the eight planets circling around the sun
@@ -131,6 +131,7 @@ which should be no problem as this is easier done in brainfuck than in thue.
   
   - Calculation Of Euler's number e
   - a program drawing the mandelbrot set
+  - [L- or Lindenmayer system](https://en.wikipedia.org/wiki/L-system) which draws leaves of a plant or a plant
   - Conway's Game Of Life
   - a [CoreWar](https://en.wikipedia.org/wiki/Core_War) duell (not sure if this would convince them of our peacefull intentions)
   - a small program playing Go or Chess 😀️ ²
