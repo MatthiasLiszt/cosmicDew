@@ -3,14 +3,25 @@
     <p> open devtools to take a look at the console</p>
     <script src ="../const.js"></script>
     <script src ="../translateThue.js"></script>
+    <script src ="../translateDebug.js"></script>
+    <script src ="../conversions.js"></script>
     <script src="../../data/reflection.js"></script>
+    <script src="../../data/reflectionDebug.js"></script>
     <script>
       console.log(`translating reflection program`);
       const Reflection = translateThue(reflection);
       console.log(JSON.stringify(Reflection));
       const pseudo = Reflection.join('');
-      const bits = translateThue2binary(pseudo);
-      console.log(JSON.stringify(bits));
+      const bits = translatePseudo2binary(pseudo);
+      //console.log(JSON.stringify(bits));
+      const ReflectionDebug = translateDebug(reflectionDebug);
+      console.log(JSON.stringify(ReflectionDebug));
+      const debugBits = translatePseudo2binary(ReflectionDebug.join(''));
+      //console.log(JSON.stringify(debugBits));
+      const wholeReflection = bits.join('') + debugBits.join('');
+      console.log(wholeReflection);
+      console.log(`whole reflection program with debug samples in hex`);
+      console.log(binaryString2hex(wholeReflection));
     </script>
   </body>
-</html> )
+</html> 

@@ -21,7 +21,7 @@ function translateThue(thue) {
   return output;
 }
 
-function translateThue2binary(pseudo) {
+function translatePseudo2binary(pseudo) {
   const output = [];
   for (const one of pseudo.split('')) {
     if (metaSymbols.includes(one)) {
