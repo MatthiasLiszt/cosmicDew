@@ -11,6 +11,8 @@ In the **data** directory are the files in Thue and the debug files which form p
 In the **bfuck** directory are the brainfuck files.
 **.bf** extension
 
+Int the **src** directory are JavaScript files which are required for the index.html .
+
 # Intro 
 
 This repo is inspired by [CosmicOs](https://cosmicos.github.io/) which was inspired by works of [Freudenthal](https://en.wikipedia.org/wiki/Lincos_language). Instead of using a complex LISP like language I thought of using simpler esoteric language like [Thue](https://en.wikipedia.org/wiki/Thue_(programming_language)).
