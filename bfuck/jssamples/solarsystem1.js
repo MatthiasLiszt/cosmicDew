@@ -14,7 +14,7 @@ const saturnDay = 10 * hour + 33;
 const uranusDay = 17 * hour + 14;
 const neptuneDay = 16 * hour;
 
-const PiTwice = Math.floor(Math.PI * 2 * (2 ** 31));
+const PiTwice = Math.floor(Math.PI * 2 * (2 ** 28));
 
 // angle change in one hour
 const earthMove = Math.floor((PiTwice / earthDay) * 60);

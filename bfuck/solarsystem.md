@@ -27,8 +27,8 @@ the various mathematical operations.
 The program starts with initializing the angles the sun and plantes had during the time we sent
 the message. The angle is described in radiands - thus a full turn is 2π - but as 
 π is not a natural number we have to use a natural number equivalent as we want to restrict us
-to 32bit unsigned integers. Thus a full turn or 2π will be π * 2 * 2³¹ or approximately 13493037704
-or 3243f6a88 in hexadecimal.
+to 32bit unsigned integers. Thus a full turn or 2π will be π * 2 * 2²⁸ or approximately 1686629713
+or 6487ed51 in hexadecimal.
 
 For a code sample in JavaScript please got to the jssamples directory to solarsystem1.js .
 
