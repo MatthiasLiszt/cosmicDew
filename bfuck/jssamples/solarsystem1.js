@@ -29,18 +29,18 @@ const neptuneMove = Math.floor((PiTwice / neptuneDay) * 60);
 
 
 // intial angles of sun and planets
-const sunAngle = 0;
-const mercuryAngle = 0;
-const venusAngle = 0;
-const earthAngle = 0;
-const marsAngle = 0;
-const jupiterAngle = 0;
-const saturnAngle = 0;
-const uranusAngle = 0;
-const neptuneAngle = 0;
+let sunAngle = 0;
+let mercuryAngle = 0;
+let venusAngle = 0;
+let earthAngle = 0;
+let marsAngle = 0;
+let jupiterAngle = 0;
+let saturnAngle = 0;
+let uranusAngle = 0;
+let neptuneAngle = 0;
 
 const limit = 24; // the planned program will have no limit
-const pastedTime = 0; // this will be missing in the planned program
+let pastedTime = 0; // this will be missing in the planned program
 
 while (pastedTime < limit) { //planned to be an endless loop
   sunAngle += sunMove;
