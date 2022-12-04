@@ -137,6 +137,8 @@ which should be no problem as this is easier done in brainfuck than in thue.
   - Conway's Game Of Life
   - a [CoreWar](https://en.wikipedia.org/wiki/Core_War) duell (not sure if this would convince them of our peacefull intentions)
   - a small program playing Go or Chess 😀️ ²
+  - a hash algorithm for signing the whole message
+  - - the hash of the entire message (probably repeated several times)
   
   ² a bit of a challenge in a language which knows no in- and output
     

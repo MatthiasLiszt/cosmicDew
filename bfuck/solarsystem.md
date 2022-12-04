@@ -31,7 +31,7 @@ to 32bit unsigned integers. Thus a full turn or 2π will be π * 2 * 2²⁸ or a
 or 6487ed51 in hexadecimal.
 
 For a code sample in JavaScript please got to the jssamples directory to solarsystem1.js .
-
+0
 Now I am thinking of limiting the simulation of to one year or 8766 hours.
 
 ## Part 2 -- Position in the Solar System
@@ -43,6 +43,13 @@ circumference for each planet or come pretty close to it as far as 32bit integer
 
 So instead of a fraction of 2π we describe the position of how much of the elliptical circumference (orbit) has
 been completed.
+
+However when we include the distance from the sun then describing the orbital position in common radiands might
+be more practical.
+
+I think it is possible to calculate speed and distance from the time it takes a planet to orbit the sun. Thus although
+not explicitly expressed distance from the sun might be able to be calculated and then as well the bitmap suggested
+to be drawn in part 4.
 
 ## Part 3 -- Distance from the sun
 
