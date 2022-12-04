@@ -23,12 +23,14 @@ int saturnAngle = 0;
 int uranusAngle = 0;
 int neptuneAngle = 0;
 
-int limit = 24; // the planned program will have no limit
-int pastedTime = 0; // this will be missing in the planned program
+int limit = 24; 
+int passedTime = 0; 
 
-while (pastedTime < limit) { //planned to be an endless loop
+while (pastedTime < limit) {
   sunAngle += sunMove;
   sunAngle %= PiTwice;
+  mercuryAngle += mercuryMove;
+  mercuryAngle %= PiTwice;
   venusAngle += venusMove;
   venusAngle %= PiTwice;
   earthAngle += earthMove;
@@ -43,5 +45,5 @@ while (pastedTime < limit) { //planned to be an endless loop
   uranusAngle %= PiTwice;
   neptuneAngle += neptuneMove;
   neptuneAngle %= PiTwice;
-  ++pastedTime;
+  ++passedTime;
 }

@@ -39,12 +39,14 @@ let saturnAngle = 0;
 let uranusAngle = 0;
 let neptuneAngle = 0;
 
-const limit = 24; // the planned program will have no limit
-let pastedTime = 0; // this will be missing in the planned program
+const limit = 24 * 365 + 6; 
+let passedTime = 0;
 
-while (pastedTime < limit) { //planned to be an endless loop
+while (passedTime < limit) {
   sunAngle += sunMove;
   sunAngle %= PiTwice;
+  mercuryAngle += mercuryMove;
+  mercuryAngle %= mercuryMove;
   venusAngle += venusMove;
   venusAngle %= PiTwice;
   earthAngle += earthMove;
@@ -59,8 +61,8 @@ while (pastedTime < limit) { //planned to be an endless loop
   uranusAngle %= PiTwice;
   neptuneAngle += neptuneMove;
   neptuneAngle %= PiTwice;
-  ++pastedTime;
+  ++passedTime;
   // some console.log for debugging
-  console.log(`${sunAngle} ${venusAngle} earth ${earthAngle} ${marsAngle}`);
+  console.log(`${sunAngle} ${mercuryAngle} ${venusAngle} earth ${earthAngle} ${marsAngle}`);
   console.log(`${jupiterAngle} ${saturnAngle} ${uranusAngle} ${neptuneAngle}`);
 }

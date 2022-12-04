@@ -32,6 +32,8 @@ or 6487ed51 in hexadecimal.
 
 For a code sample in JavaScript please got to the jssamples directory to solarsystem1.js .
 
+Now I am thinking of limiting the simulation of to one year or 8766 hours.
+
 ## Part 2 -- Position in the Solar System
 
 Actually this can be described with angles too as we did in Part 1. However we might not want to use
