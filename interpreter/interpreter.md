@@ -83,12 +83,13 @@ deactivating or neutralizing of instructions has to stop.
 
   ONioi ::= OIOIX
   INioi ::= IIOIX
-  !Nioi ::= IOIN
+  !X::=X
 
 The ! and W obviously have to move too but have to be stopped by X.
 
   !O::=O!
   !I::=I!
+  !W::=W!
   WO::=OW
   WI::=IW
 
@@ -112,6 +113,30 @@ if memory cell was 0 then continue with next instruction
 if memory cell was 1 then the trouble starts again
 
   ioi.bckT.Ppt::=QH.Ppt.ioi
+
+obviously Q has to move
+
+  ooiQ::=Qooi
+  oioQ::=Qoio
+  oiiQ::=Qoii
+  ioiQ::=QCioi
+
+When Q reaches [ (ioo) it has to be checked again if there are remaining C like ! where for [ .
+
+  iooQo::=Yiooo
+  iooQi::=Yiooi
+  YC::=Y
+
+The C and H obviously have to move too but have to be stopped by Y.
+
+  oC::=Co
+  iC::=Ci
+  HC::=CH
+  oH::=Ho
+  iH::=Hi
+
+If H reaches Y then it transforms to .. again HY::=..
+This is important as the tail of C behind Q can be arbitrarily long.
 
 ## the < instruction (oio)
 
