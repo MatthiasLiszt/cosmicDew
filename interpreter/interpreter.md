@@ -14,20 +14,22 @@ and requires less rules and that brainfuck programms are shorter than boolfuck o
 The test input provided in the Brain- to Boolfuck interpreter is 42 or > ++++ [< ++++ ++++ ++>-]<++ adapted to 
 the planned representation for Thue.
 
-It will probably look like this adb Bgt BpBpBpBp BcoBlt BpBpBpBp BpBpBpBp BpBp BgtBmBcc BltBpBp w
+It will probably look like this aaa dtrnb Bgt BplBplBplBpl BcoBlt BplBplBplBpl BplBplBplBpl BplBpl BgtBmBcc BltBplBpl www
 The spaces in the code and input string are only for readability here and will be missing.
 
 # Symbols used in the interpreter
 
 db ... program state; the program state is stored between d and b
-a ... beginn of the input string/program to be interpreted (a from alpha)
-w ... end of the input string/program to be interpreted (w as a version of omega)
+aaa ... begin of the input string/program to be interpreted (a from alpha)
+www ... end of the input string/program to be interpreted (w as a version of omega)
+trn ... brain- to boolfuck translate state
+rtn ... returning to aaa after completing trn
 
 B ... marks a brainfuck instruction
 Bgt ... > (gt for greater than)
 Blt ... < (lt for less than)
-Bp ... + (plus)
-Bm ... - (minus)
+Bpl ... + (plus)
+Bmn ... - (minus)
 Bco ... [ (bracket open ?)
 Bcc ... ] (bracket close ?)
 
