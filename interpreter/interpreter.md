@@ -19,7 +19,7 @@ The spaces in the code and input string are only for readability here and will b
 
 # Symbols used in the interpreter
 
-  .. ... program state; the program state is stored between d and b
+  .. ... program state; the program state is stored between two dots
   mmm ... beginning of the memory section
   aaa ... begin of the input string/program to be interpreted (a from alpha)
   www ... end of the input string/program to be interpreted (w as a version of omega)
@@ -48,18 +48,43 @@ The spaces in the code and input string are only for readability here and will b
   whlF ... state of [ instructino if memory cell was 0
   whlT ... state of [ instructino if memory cell was 1
   bckQ ... ] instruction state (bck = back) checking if memory cell is 1
+  bckF ... state of ] instructino if memory cell was 0
+  bckT ... state of ] instructino if memory cell was 1
   bwdA ... < instruction state (bwd = backward)
   bwdR ... return state of the < instruction
   fwdA ... > instruction state (fwd = forward)
   fwdR ... return state of the > instruction
 
-  O and I are used for deactivated instructions just like o and i are for active instructions
-  ! ... an unary counter used to process the [ and ] instruction
+  ! ... an unary counter used to process the [ instruction
+  N ... beginning of the state of the [ instruction
+  W ... end of the state of the [ instruction
+  X ... stopper for the unary counting symbol ! 
+
+  C ... an unary counter used to process the ] instruction
+  Q ... beginning of the state of the ] instruction
+  H ... end of the state of the ] instruction
+  Y ... stopper for the unary counting symbol C
 
 ## the [ instruction (ioo)
 
 Obviously one of the most difficult instructions in this whole interpreter. I better start with it as the rest will be pretty easy.
 Triggered by ..ioo::=ioo.whlQ.Ppt
+
+As the "state" of the [ instruction can be arbitrarily long using something between dots would not be that smart.
+The basic idea behind an arbitrarily long string which can travel in Thue is the introduction of stoppers or symbols
+which can not be crossed because the crossing rules are not defined.
+
+In this case W can not cross N and thus W will always be behind N.
+The unary counting symbol ! can not cross N is introduced in a rule together with N.
+W can not cross ! and thus always comes behind ! as ! always comes behind N.
+Thus the form of the arbitrarily long string is preserved and it does not matter if
+occassionally o and i come between them as this is only temporarily.
+
+After thinking for a while I came to the conclusion that deactivating instructions like in the
+[Thue to Brainfuck interpreter of user Koen](https://esolangs.org/wiki/Brainfuck_interpreter_in_Thue)
+can be skipped as we too are not manually disabling instructions when reading through while loops.
+
+Also neither N, W or ! trigger any instructions.
 
 Getting result from memory mell
 
@@ -70,28 +95,28 @@ execute body if memory cell was 1
 
   .whlT.Ppt::=..
 
-deactiving instructions if memorcy cell was 0
+skipping instructions if memorcy cell was 0
 
-  ioo .whlF. Ppt ::= IOOWN
-  Nooi ::= OOIN
-  Noio ::= OION
-  Noii ::= OIIN
-  Nioo ::= IOO!N
+  ioo .whlF. Ppt ::= iooWN
+  Nooi ::=  ooiN
+  Noio ::= oioN
+  Noii ::= oiiN
+  Nioo ::= ioo!N
 
 When N reaches ioi (]) it has to be checked whether there are any remaining !. If there are no remaining ! then 
 deactivating or neutralizing of instructions has to stop.
 
-  ONioi ::= OIOIX
-  INioi ::= IIOIX
-  !X::=X
+  Nioi ::= ioiX
+  !X::=N
+  WX::=..
 
 The ! and W obviously have to move too but have to be stopped by X.
 
-  !O::=O!
-  !I::=I!
+  !o::=o!
+  !i::=i!
   !W::=W!
-  WO::=OW
-  WI::=IW
+  Wo::=oW
+  Wi::=iW
 
 If W reaches X then it transforms to .. again WX::=..
 This is important as the tail of ! behind N can be arbitrarily long.
@@ -100,6 +125,9 @@ This is important as the tail of ! behind N can be arbitrarily long.
 
 Obviously one of the most difficult instructions in this whole interpreter. I better start with it as the rest will be pretty easy.
 Triggered by ..ioi::=ioi.bckQ.Ppt
+
+There are great similarities with the [ instruction. However the state moves in the opposite direction and other
+state symbols have to be used in order to avoid any interference with rules from the [ instruction.
 
 Getting result from memory mell
 
@@ -112,7 +140,7 @@ if memory cell was 0 then continue with next instruction
 
 if memory cell was 1 then the trouble starts again
 
-  ioi.bckT.Ppt::=QH.Ppt.ioi
+  ioi.bckT.Ppt::=QHPptioi
 
 obviously Q has to move
 
@@ -125,7 +153,8 @@ When Q reaches [ (ioo) it has to be checked again if there are remaining C like 
 
   iooQo::=Yiooo
   iooQi::=Yiooi
-  YC::=Y
+  YC::=Q
+  YH::=..
 
 The C and H obviously have to move too but have to be stopped by Y.
 
@@ -135,7 +164,7 @@ The C and H obviously have to move too but have to be stopped by Y.
   oH::=Ho
   iH::=Hi
 
-If H reaches Y then it transforms to .. again HY::=..
+If H reaches Y then it transforms to .. again YH::=..
 This is important as the tail of C behind Q can be arbitrarily long.
 
 ## the < instruction (oio)
@@ -187,4 +216,49 @@ Once .swpA. reaches the memory pointer Mpt it changes a 0 to 1 and a 1 to 0.
 
 ## state bwdA and bwdR
 
+  aaa.bwdA.::=.bwdA.aaa
+  o.bwdA.::=.bwdA.o
+  i.bwdA.::=.bwdA.i
+
+  .bwdR.aaa::=aaa.bwdR.
+  .bwdR.o::=o.bwdR.
+  .bwdR.i::=i.bwdR.
+
 ## state fwdA and fwdR
+
+  aaa.fwdA.::=.fwdA.aaa
+  o.fwdA.::=.fwdA.o
+  i.fwdA.::=.fwdA.i
+
+  .fwdR.aaa::=aaa.fwdR.
+  .fwdR.o::=o.fwdR.
+  .fwdR.i::=i.fwdR.
+
+## state whlQ , whlT and whlF
+
+  aaa.whlQ.::=.whlQ.aaa
+  o.whlQ.::=.whlQ.o
+  i.whlQ.::=.whlQ.i
+
+  .whlT.aaa::=aaa.whlT.
+  .whlT.o::=o.whlT.
+  .whlT.i::=i.whlT.
+
+  .whlF.aaa::=aaa.whlF.
+  .whlF.o::=o.whlF.
+  .whlF.i::=i.whlF.
+
+## state bckQ, bckT and bckF
+
+  aaa.bckQ.::=.bckQ.aaa
+  o.bckQ.::=.bckQ.o
+  i.bckQ.::=.bckQ.i
+
+  .bckT.aaa::=aaa.bckT.
+  .bckT.o::=o.bckT.
+  .bckT.i::=i.bckT.
+
+  .bckF.aaa::=aaa.bckF.
+  .bckF.o::=o.bckF.
+  .bckF.i::=i.bckF.
+
