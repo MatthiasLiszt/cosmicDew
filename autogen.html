@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <style>
+      body {
+        padding: 5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>the scrollable message in binary</h3>
+    <textarea id="message" rows="42" cols="69" style="overflow:scroll" readonly></textarea>
+    <div id="comment"></div>
+    <script src ="src/const.js"></script>
+    <script src ="src/translateThue.js"></script>
+    <script src ="src/translateDebug.js"></script>
+    <script src ="src/conversions.js"></script>
+    <script src="data/reflection.js"></script>
+    <script src="data/reflectionDebug.js"></script>
+    <script src="data/increment.js"></script>
+    <script src="data/incrementDebug.js"></script>
+    <script src="data/solarsys2.js"></script>
+    <script>
+      const Textarea = document.getElementById('message');
+      const comment = document.getElementById('comment');
+      const bits = [];
+      const Reflection = translateThue(reflection);
+      bits.push(translatePseudo2binary(Reflection.join('')).join(''));
+      const ReflectionDebug = translateDebug(reflectionDebug);
+      bits.push(translatePseudo2binary(ReflectionDebug.join('')).join(''));
+      const Increment = translateThue(increment);
+      bits.push(translatePseudo2binary(Reflection.join('')).join(''));
+      const IncrementDebug = translateDebug(incrementDebug);
+      console.log(IncrementDebug);
+      bits.push(translatePseudo2binary(IncrementDebug.join('')).join(''));
+      const Solarsys2 = translateThue(solarsys2);
+      bits.push(translatePseudo2binary(Solarsys2.join('')).join(''));
+      const WholeMessage = bits.join('');
+      Textarea.textContent = WholeMessage;
+      comment.textContent = `${WholeMessage.length} bits`;
+    </script>
+  </body>
+</html> 

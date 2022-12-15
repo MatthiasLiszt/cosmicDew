@@ -13,6 +13,13 @@ In the **bfuck** directory are the brainfuck files.
 
 Int the **src** directory are JavaScript files which are required for the index.html .
 
+## Viewing the mininmal message in your browser
+
+There is an **autogen.sh** in the main directory which when executed makes the **autogen.html** viewable or
+runnable in your browser. In other words the autogen.sh generates the required js files to make the minimal message
+-- so far just reflection program, increment program and version 2 of the solarsys program -- viewable in binary
+only. 
+
 # Intro 
 
 This repo is inspired by [CosmicOs](https://cosmicos.github.io/) which was inspired by works of [Freudenthal](https://en.wikipedia.org/wiki/Lincos_language). Instead of using a complex LISP like language I thought of using simpler esoteric language like [Thue](https://en.wikipedia.org/wiki/Thue_(programming_language)).
